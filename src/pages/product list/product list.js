@@ -1,40 +1,43 @@
-import React,{useState,useEffect} from 'react'
+import img from '../../assets/images/mobile.jpg'
 import Product from '../../components/product/product'
-
-import useFetch from '../../hooks/useFetch'
 import './product list.css'
 
 function  ProductList() {
-  let productsUrl = "https://fakestoreapi.com/products"
+  let product = {
+    img,
+    price:23.45,
+    rating:2.4,
+    title:'Iphone 13 Pro Max Iphone 13 Pro Max',
+    count:245
 
-  let {loading,data,error}=useFetch(productsUrl)
-
-  if(loading){
-    return <h2>Loading ...</h2>
   }
-  else if(error.errorOccured){
-    return<h2>Error Occured...{`\n ${error.errorMessage}`}</h2>
+  let product2 = {
+    img,
+    price:23.45,
+    rating:5,
+    title:'Iphone 13 Pro Max',
+    count:245
+
   }
-  else {
-      return (
-        <div className='products'>
-        <h2 className='title'>Product List</h2>
-        <div className='product-list'>
-        {
-          data.map(product=>{
-            return <Product key={product.id} title={product.title} img={product.image}
-             price={product.price} rating={product.rating.rate} 
-             count={product.rating?.count}
-                  ></Product>
-          })
-        }
-        </div>
+  let product3 = {
+    img,
+    price:23.45,
+    rating:4,
+    title:'Samsung Galaxy s21s Ultra',
+    count:245
 
-        </div>
-    )
   }
+  return (
+    <div className='products'>
+    <h2 className='title'>Product List</h2>
+    <div className='product-list'>
+    <Product key={1} {...product}></Product>
+    <Product key={2} {...product2}></Product>
+    <Product key={3} {...product3}></Product>
+    </div>
 
-
+    </div>
+  )
 }
 
 export default ProductList
