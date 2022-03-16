@@ -3,6 +3,7 @@ import './product.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
+import Button from '../button/button'
 function Product({key,img,title,price,rating,count}) {
     let starCount =[]
     for (let i =1;i<rating;i++){
@@ -15,23 +16,24 @@ function Product({key,img,title,price,rating,count}) {
         </div>
         <div className='description'>
             <h2 className='title'>{title}</h2>
-
+          
             <div className='rating-info'>
-            <div className='stars'>
-                 {
-                    starCount.map((count)=>{
-                        return <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                     })
-                 }
-            </div>
-
+                <div className='stars'>
+                    {
+                        starCount.map((count)=>{
+                            return <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                        })
+                    }
+                </div>
+         
                 <p className='count'> {count}</p>
             </div>
             <p className='price'>{price} ETB</p>
-
+            <Button text='Add To Cart'></Button>
+            
         </div>
     </div>
   )
 }
 
-export default Product 
+export default Product
