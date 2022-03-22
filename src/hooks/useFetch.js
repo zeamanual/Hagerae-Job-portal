@@ -9,21 +9,21 @@ function useFetch(url) {
         try {
 
             let response = await axios.get(url)
-            console.log('data fetched \n ',response.data)
+            // console.log('data fetched \n ',response.data)
             setLoading(false)
             setData(response.data)
             
         } catch (error) {
             setLoading(false)
-            setError({errorOccured:true,errorMessage:error})
-            console.log('error occured dude..',error)
+            setError({errorOccured:true,errorMessage:error.message})
+            // console.log('error occured dude..',error)
         }
     }
 
 
       useEffect(()=>{
         fetchData(url)
-      })
+      },[])
 
     return {data,loading,error}
 }

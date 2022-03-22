@@ -13,7 +13,7 @@ function  ProductList() {
     return <h2>Loading ...</h2>
   }
   else if(error.errorOccured){
-    return<h2>Error Occured...{`\n ${error.errorMessage}`}</h2>
+    return<h2>{`\n ${error.errorMessage}`}</h2>
   }
   else {
       return (

@@ -4,13 +4,18 @@ import './product.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import Button from '../button/button'
+import { Link,useNavigate } from 'react-router-dom'
 function Product({key,img,title,price,rating,count}) {
     let starCount =[]
     for (let i =1;i<rating;i++){
         starCount.push(i)
     }
+
+    let clickHandler =()=>{
+        
+    }
   return (
-    <div className='product'>
+    <div className='product' onClick={clickHandler}>
         <div className='img-container'>
             <img src={img} alt='product' className='img'></img>
         </div>
