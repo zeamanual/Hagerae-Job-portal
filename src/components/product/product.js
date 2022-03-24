@@ -5,14 +5,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import Button from '../button/button'
 import { Link,useNavigate } from 'react-router-dom'
-function Product({key,img,title,price,rating,count}) {
+function Product({key,pId,img,title,price,rating,count}) {
     let starCount =[]
+    let navigate = useNavigate()
     for (let i =1;i<rating;i++){
         starCount.push(i)
     }
 
     let clickHandler =()=>{
-        
+        navigate(`/product/${pId}`)
     }
   return (
     <div className='product' onClick={clickHandler}>

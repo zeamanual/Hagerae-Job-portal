@@ -24,7 +24,7 @@ function  ProductList() {
           data.map(product=>{
             return <Product key={product.id} title={product.title} img={product.image}
              price={product.price} rating={product.rating.rate} 
-             count={product.rating?.count}
+             count={product.rating?.count} pId={product.id}
                   ></Product>
           })
         }

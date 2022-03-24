@@ -7,14 +7,10 @@ import { BrowserRouter as Router,Routes,Route, Navigate } from "react-router-dom
 function App() {
   return (
     <Router>
-    <Routes>
-      <Route path="/" element={<ProductList></ProductList>}/>
-
-      <Route path="/product/:productId" element={<ProductDetail></ProductDetail>}/>
-
-    </Routes>
-      {/* <ProductList></ProductList>
-      <ProductDetail></ProductDetail> */}
+      <Routes>
+          <Route path="/" element={<ProductList></ProductList>}/>
+          <Route path="/product/:productId" element={<ProductDetail></ProductDetail>}/>
+      </Routes>
     </Router>
   );
 }
