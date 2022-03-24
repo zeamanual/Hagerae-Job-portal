@@ -15,13 +15,16 @@ function Product({key,pId,img,title,price,rating,count}) {
     let clickHandler =()=>{
         navigate(`/product/${pId}`)
     }
+    let addToCartHandler = ()=>{
+        console.log('add to cart pressed')
+    }
   return (
-    <div className='product' onClick={clickHandler}>
-        <div className='img-container'>
+    <div className='product' >
+        <div className='img-container' onClick={clickHandler}>
             <img src={img} alt='product' className='img'></img>
         </div>
-        <div className='description'>
-            <h2 className='title'>{title}</h2>
+        <div className='description'onClick={clickHandler} >
+            <h2  className='title'>{title}</h2>
           
             <div className='rating-info'>
                 <div className='stars'>
@@ -35,9 +38,9 @@ function Product({key,pId,img,title,price,rating,count}) {
                 <p className='count'> {count}</p>
             </div>
             <p className='price'>{price} ETB</p>
-            <Button text='Add To Cart'></Button>
             
         </div>
+        <Button onClick={addToCartHandler} text='Add To Cart'></Button>
     </div>
   )
 }
