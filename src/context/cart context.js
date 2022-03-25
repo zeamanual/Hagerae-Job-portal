@@ -5,7 +5,7 @@ let CartContext = createContext()
 function CartProvider({children}) {
     let [cartData, setCartData]=useState({
         count:0,
-        items:[]
+        products:[]
     })
   return (
     <CartContext.Provider  value={{cartData,setCartData}}>
@@ -14,4 +14,4 @@ function CartProvider({children}) {
   )
 }
 
-export default {CartContext,CartProvider}
+export {CartContext,CartProvider}
