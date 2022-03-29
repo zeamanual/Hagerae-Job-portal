@@ -11,8 +11,8 @@ function App() {
     <Cart></Cart>
       <Router>
         <Routes>
-            {/* <Route path="/" element={<ProductList></ProductList>}/>
-            <Route path="/product/:productId" element={<ProductDetail></ProductDetail>}/> */}
+            <Route path="/" element={<ProductList></ProductList>}/>
+            <Route path="/product/:productId" element={<ProductDetail></ProductDetail>}/>
         </Routes>
       </Router>
     </CartProvider>

@@ -1,12 +1,16 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import './product.css'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import Button from '../button/button'
+import { CartContext } from '../../context/cart context'
+import addToCartHandler from '../../helpers/add to cart handler'
 import { Link,useNavigate } from 'react-router-dom'
+
+
 function Product({key,pId,img,title,price,rating,count}) {
     let starCount =[]
+    let cartContextData = useContext(CartContext)
     let navigate = useNavigate()
     for (let i =1;i<rating;i++){
         starCount.push(i)
@@ -15,9 +19,10 @@ function Product({key,pId,img,title,price,rating,count}) {
     let clickHandler =()=>{
         navigate(`/product/${pId}`)
     }
-    let addToCartHandler = ()=>{
-        console.log('add to cart pressed')
+    let cartHandler=()=>{
+
     }
+
   return (
     <div className='product' >
         <div className='img-container' onClick={clickHandler}>
@@ -40,7 +45,12 @@ function Product({key,pId,img,title,price,rating,count}) {
             <p className='price'>{price} ETB</p>
             
         </div>
-        <Button onClick={addToCartHandler} text='Add To Cart'></Button>
+        <div  className='btn-holder' onClick={()=>{
+                addToCartHandler(cartContextData,{pId,img,title,price})
+                }}>
+            <Button text='Add To Cart'></Button>
+        </div>
+
     </div>
   )
 }
