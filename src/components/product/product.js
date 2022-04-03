@@ -6,7 +6,7 @@ import Button from '../button/button'
 import { CartContext } from '../../context/cart context'
 import addToCartHandler from '../../helpers/add to cart handler'
 import { Link,useNavigate } from 'react-router-dom'
-
+import nameResizer from '../../helpers/name resizer'
 
 function Product({key,pId,img,title,price,rating,count}) {
     let starCount =[]
@@ -19,8 +19,9 @@ function Product({key,pId,img,title,price,rating,count}) {
     let clickHandler =()=>{
         navigate(`/product/${pId}`)
     }
-    let cartHandler=()=>{
-
+    let te =''
+    if(title.length>40){
+        title=nameResizer(title,39)
     }
 
   return (

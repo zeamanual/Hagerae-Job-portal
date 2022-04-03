@@ -3,11 +3,13 @@ import ProductList from "./pages/product list/product list";
 import { BrowserRouter as Router,Routes,Route, Navigate } from "react-router-dom";
 import {CartProvider } from "./context/cart context";
 import Cart from "./pages/cart/cart";
+import NavBar from "./components/nav bar/nav bar";
 
 
 function App() {
   return (
     <CartProvider>
+    <NavBar></NavBar>
     <Cart></Cart>
       <Router>
         <Routes>

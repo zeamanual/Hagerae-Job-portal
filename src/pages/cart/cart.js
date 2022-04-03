@@ -5,33 +5,12 @@ import Button from '../../components/button/button'
 import './cart.css'
 function Cart() {
   let cartContextData = useContext(CartContext)
-  console.log("in cart display",cartContextData)
-//   let cartContextData ={ 
-//     cartData :{
-//     count:2,
-//     products:[
-//       {
-//         id:1,
-//         img,
-//         title:"iphone 13 pro max",
-//         price:24
-//       },
-//       {
-//         id:2,
-//         img,
-//         title:"samsung galaxy s21 ultra",
-//         price:32
-
-//       }
-//     ]
-//   },
-// }
 
   let removeHandler=(id)=>{
     let newCartData = cartContextData.cartData.products.filter(product=>{
       return product.id!=id
     })
-    let newCount = cartContextData.count-1
+    let newCount = newCartData.length
     cartContextData.setCartData({
       count:newCount,
       products:newCartData
