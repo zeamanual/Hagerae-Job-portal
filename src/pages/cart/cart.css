@@ -27,6 +27,12 @@
     font-weight: 800;
     margin:1em
 }
+.total-price{
+    color: rgb(104, 104, 104);
+    font-size: 1.1em;
+    text-align: end;
+    font-weight: 800;
+}
 .btn-container > Button{
     color: white;
     width:6em;

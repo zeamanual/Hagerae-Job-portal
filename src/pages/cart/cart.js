@@ -22,10 +22,16 @@ function Cart() {
       <p className='message'>No Item Found In Your Cart</p>
     </div>
   }
+  
+  let totalPrice =0
+  cartContextData.cartData.products.forEach((product)=>{
+    totalPrice+=product.price
+  })
 
   return (
     <div className='cart-container'>
     <div className='inner-container'>
+      <p className='total-price'> Total Price: {totalPrice} ETB</p>
           {
             cartContextData.cartData.products.map(product=>{
               return (
