@@ -19,7 +19,6 @@ function Product({key,pId,img,title,price,rating,count}) {
     let clickHandler =()=>{
         navigate(`/product/${pId}`)
     }
-    let te =''
     if(title.length>40){
         title=nameResizer(title,39)
     }

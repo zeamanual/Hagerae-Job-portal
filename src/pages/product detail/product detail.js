@@ -1,19 +1,20 @@
-import React from 'react'
+import React,{ useContext } from 'react'
 import './product detail.css'
+import { CartContext } from '../../context/cart context'
 import image from '../../assets/images/mobile.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import Button from '../../components/button/button'
 import useFetch from '../../hooks/useFetch'
 import { useParams } from 'react-router-dom'
-
+import addToCartHandler from '../../helpers/add to cart handler'
 
 
 function ProductDetail() {
     let params = useParams()
     let baseUrl = "https://fakestoreapi.com/products/"
     let {data,loading,error}=useFetch(baseUrl+params.productId)
-
+    let cartContextData=useContext(CartContext)
     let starCount =[]
     for (let i =1;i<data.rating?.rate;i++){
         starCount.push(i)
@@ -53,7 +54,14 @@ function ProductDetail() {
                         <h2 className='product-desc-title'>Product Description</h2>
                         <p className='discription'>{data.description}</p>
                     </div>
-                    <Button text='Add To Cart'></Button>
+                    <div className='cart-btn-container' 
+                     onClick={()=>{
+                addToCartHandler(cartContextData,{pId:data.id,img:data.image,title:data.title,price:data.price})
+                }}
+                >
+                        <Button text='Add To Cart'></Button>
+                    </div>
+                    
                 </div>
             </div>
         )

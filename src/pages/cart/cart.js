@@ -17,6 +17,11 @@ function Cart() {
     })
 
   }
+  if(cartContextData.cartData.products.length<1){
+    return <div className='message-container'>
+      <p className='message'>No Item Found In Your Cart</p>
+    </div>
+  }
 
   return (
     <div className='cart-container'>

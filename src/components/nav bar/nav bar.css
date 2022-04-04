@@ -2,31 +2,35 @@ nav{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-   
-
 }
-.nav-cart-container{
+.nav-btn-container{
     margin:1em 10vw;
     position: relative;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
+}
+.home-btn-container Button{
+    width: auto;
+    padding: 1em 2em
 }
 nav .title{
     margin: 1em;
 }
-.nav-cart-container .icon{
+.nav-btn-container .icon{
+    cursor: pointer;
     font-size: 1.6em;
     justify-self: end;
     color: rgb(255, 196, 0);
 }
-.nav-cart-container .count{
+.nav-btn-container .count{
     position:absolute;
     bottom:0;
     right:-0.5em;
     color: rgb(255, 115, 0);
     font-weight: 800;
 }
-.nav-cart-container .icon:hover{
+.nav-btn-container .icon:hover{
     color: rgb(223, 171, 0);
 }

@@ -3,3 +3,7 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+.products > .title{
+    margin: 1em;
+    text-align: center;
+}
