@@ -4,14 +4,15 @@ import { BrowserRouter as Router,Routes,Route, Navigate } from "react-router-dom
 import {CartProvider } from "./context/cart context";
 import Cart from "./pages/cart/cart";
 import NavBar from "./components/nav bar/nav bar";
+import DropDownMenu from "./components/drop down menu/drop down menu";
 
 
 function App() {
   return (
     <CartProvider>
- 
       <Router>   
         <NavBar></NavBar>
+        <DropDownMenu></DropDownMenu>
         <Routes>
             <Route path="/" element={<ProductList></ProductList>}/>
             <Route path="/product/:productId" element={<ProductDetail></ProductDetail>}/>

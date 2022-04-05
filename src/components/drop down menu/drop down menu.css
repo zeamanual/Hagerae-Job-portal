@@ -1,0 +1,45 @@
+.drop-menu-container .title{
+    display: inline-block;
+    padding: 0.5em;
+    background-color: rgb(255, 196, 0);
+    width:auto;
+    border-radius: 0.6em;
+    cursor: pointer;
+}
+.drop-menu-container{
+    display: flex;
+
+}
+.drop-menu-inner-container{
+    position: relative;
+    width: auto;
+}
+.drop-menu-container .menu-items{
+    position:absolute;
+    top:2em;
+    right: 0;
+    height: 0;
+    overflow: hidden;
+    width: 80%;
+    transition: height 0.25s linear;
+}
+.drop-menu-container .icon{
+    transition: transform 0.15s linear;
+}
+.drop-menu-inner-container:hover .icon{
+    transform: rotate(-180deg);
+}
+
+.drop-menu-inner-container:hover .menu-items{
+    height: 400px;
+}
+
+.option{
+    cursor: pointer;
+    padding: 0.5em;
+    background-color: rgb(255, 196, 0);
+    border-bottom: 3px solid rgb(114, 114, 114);
+}
+.option:hover{
+    background-color: rgb(223, 171, 0);
+}
