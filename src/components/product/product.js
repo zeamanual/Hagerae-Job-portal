@@ -5,10 +5,10 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 import Button from '../button/button'
 import { CartContext } from '../../context/cart context'
 import addToCartHandler from '../../helpers/add to cart handler'
-import { Link,useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import nameResizer from '../../helpers/name resizer'
 
-function Product({key,pId,img,title,price,rating,count}) {
+function Product({pId,img,title,price,rating,count}) {
     let starCount =[]
     let cartContextData = useContext(CartContext)
     let navigate = useNavigate()
@@ -35,7 +35,7 @@ function Product({key,pId,img,title,price,rating,count}) {
                 <div className='stars'>
                     {
                         starCount.map((count)=>{
-                            return <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                            return <FontAwesomeIcon key={count} icon={faStar}></FontAwesomeIcon>
                         })
                     }
                 </div>

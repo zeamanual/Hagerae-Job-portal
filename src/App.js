@@ -12,7 +12,6 @@ function App() {
     <CartProvider>
       <Router>   
         <NavBar></NavBar>
-        <DropDownMenu></DropDownMenu>
         <Routes>
             <Route path="/" element={<ProductList></ProductList>}/>
             <Route path="/product/:productId" element={<ProductDetail></ProductDetail>}/>

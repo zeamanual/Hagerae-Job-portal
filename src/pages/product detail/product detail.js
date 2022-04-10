@@ -8,6 +8,8 @@ import Button from '../../components/button/button'
 import useFetch from '../../hooks/useFetch'
 import { useParams } from 'react-router-dom'
 import addToCartHandler from '../../helpers/add to cart handler'
+import Loading from '../../components/loading/loading'
+import ErrorP from '../../components/error/error'
 
 
 function ProductDetail() {
@@ -21,10 +23,10 @@ function ProductDetail() {
     }
 
     if(loading){
-        return <h2>Loading ...</h2>
+        return <Loading></Loading>
     }
     else if(error.errorOccured){
-        return<h2>{`\n ${error.errorMessage}`}</h2>
+        return <ErrorP message={error.errorMessage}></ErrorP>
     }
     else {
         return (
@@ -40,7 +42,7 @@ function ProductDetail() {
                             <div className='stars'>
                                 {
                                     starCount.map((count)=>{
-                                        return <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                                        return <FontAwesomeIcon key={count} icon={faStar}></FontAwesomeIcon>
                                     })
                                 }
                             </div>

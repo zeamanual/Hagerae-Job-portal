@@ -53,6 +53,7 @@
 .cart-container > Button{
    width:auto;
    padding: 1em;
+   margin-bottom: 1em;
 }
 .cart-container .product-detail{
     width: 40vw;
