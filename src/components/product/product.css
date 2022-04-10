@@ -62,3 +62,11 @@
     color: gold;
     padding-right:1em;
 }
+
+.added button{
+    background-color: rgb(107, 107, 107);
+    color: white;
+}
+.added button:hover{
+    background-color: rgb(107, 107, 107);
+}

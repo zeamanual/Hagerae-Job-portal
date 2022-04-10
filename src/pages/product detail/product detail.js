@@ -14,6 +14,7 @@ import ErrorP from '../../components/error/error'
 
 function ProductDetail() {
     let params = useParams()
+    let alreadyAdded=false
     let baseUrl = "https://fakestoreapi.com/products/"
     let {data,loading,error}=useFetch(baseUrl+params.productId)
     let cartContextData=useContext(CartContext)
@@ -21,7 +22,11 @@ function ProductDetail() {
     for (let i =1;i<data.rating?.rate;i++){
         starCount.push(i)
     }
-
+    cartContextData.cartData.products.forEach(product=>{
+        if(product.id==data.id){
+            alreadyAdded=true
+        }
+    })
     if(loading){
         return <Loading></Loading>
     }
@@ -56,7 +61,7 @@ function ProductDetail() {
                         <h2 className='product-desc-title'>Product Description</h2>
                         <p className='discription'>{data.description}</p>
                     </div>
-                    <div className='cart-btn-container' 
+                    <div  className={alreadyAdded ? 'added cart-btn-container':'cart-btn-container'}
                      onClick={()=>{
                 addToCartHandler(cartContextData,{pId:data.id,img:data.image,title:data.title,price:data.price})
                 }}
