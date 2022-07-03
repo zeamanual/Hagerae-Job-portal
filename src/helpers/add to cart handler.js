@@ -8,7 +8,6 @@ function addToCartHandler(cartContextData,data) {
             alreadyAdded=true
         }
     })
-    console.log('allreeeddy added',alreadyAdded)
     if(!alreadyAdded){
         let newCount = cartContextData.cartData.count+1
         cartContextData.cartData.products.push({

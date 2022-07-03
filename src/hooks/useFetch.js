@@ -11,7 +11,6 @@ function useFetch(url) {
             let response = await axios.get(url)
             setLoading(false)
             setData(response.data)
-            console.log('data fetched',response.data)
             
         } catch (error) {
             setLoading(false)
@@ -22,6 +21,7 @@ function useFetch(url) {
 
       useEffect(()=>{
         fetchData(url)
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       },[])
 
     return {data,loading,error}
