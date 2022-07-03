@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React from 'react'
 import ErrorP from '../../components/error/error'
 import Loading from '../../components/loading/loading'
 import Product from '../../components/product/product'

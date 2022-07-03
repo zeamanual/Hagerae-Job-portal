@@ -9,9 +9,9 @@ import { useNavigate } from 'react-router-dom'
 function NavBar() {
     let navigate = useNavigate()
     let clickHandler=(path)=>{
-        if(path=='CART'){
+        if(path==='CART'){
             navigate('/cart')
-        }else if(path =='PRODUCT'){
+        }else if(path ==='PRODUCT'){
             navigate('/')
         }
     }

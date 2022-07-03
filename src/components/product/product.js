@@ -25,7 +25,7 @@ function Product({pId,img,title,price,rating,count}) {
     }
     
     cartContextData.cartData.products.forEach(product=>{
-        if(product.id==pId){
+        if(product.id===pId){
             alreadyAdded=true
         }
     })

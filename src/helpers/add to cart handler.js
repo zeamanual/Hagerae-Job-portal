@@ -1,11 +1,10 @@
-import React from 'react'
 
 function addToCartHandler(cartContextData,data) {
     let alreadyAdded=false
     let {pId,img,title,price}=data
 
     cartContextData.cartData.products.forEach(product=>{
-        if(product.id==pId){
+        if(product.id===pId){
             alreadyAdded=true
         }
     })

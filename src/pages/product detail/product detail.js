@@ -1,7 +1,6 @@
 import React,{ useContext } from 'react'
 import './product detail.css'
 import { CartContext } from '../../context/cart context'
-import image from '../../assets/images/mobile.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import Button from '../../components/button/button'
@@ -23,7 +22,7 @@ function ProductDetail() {
         starCount.push(i)
     }
     cartContextData.cartData.products.forEach(product=>{
-        if(product.id==data.id){
+        if(product.id===data.id){
             alreadyAdded=true
         }
     })

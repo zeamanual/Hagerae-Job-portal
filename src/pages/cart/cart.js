@@ -1,6 +1,5 @@
 import React,{useContext} from 'react'
 import { CartContext } from '../../context/cart context'
-import img from '../../assets/images/mobile.jpg'
 import Button from '../../components/button/button'
 import './cart.css'
 function Cart() {
@@ -8,7 +7,7 @@ function Cart() {
 
   let removeHandler=(id)=>{
     let newCartData = cartContextData.cartData.products.filter(product=>{
-      return product.id!=id
+      return product.id!==id
     })
     let newCount = newCartData.length
     cartContextData.setCartData({
