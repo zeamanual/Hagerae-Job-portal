@@ -1,4 +1,4 @@
-The website is launched on netlify, the link for it is zeamanual-feleke-demo-product-display-site.netlify.app
+The website is launched on netlify, the link for it is https://zeamanual-feleke-demo-product-display-site.netlify.app
 
 # Getting Started with Create React App
 
