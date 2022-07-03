@@ -18,7 +18,7 @@ function NavBar() {
     let cartContextData = useContext(CartContext)
     return (
         <nav>
-        <h2 className='title'>Demo Product Store Using External API </h2>
+        <h2 className='title'>Demo Product Display Using External API </h2>
         <div  className='nav-btn-container'>
             <div className='home-btn-container' onClick={()=>{clickHandler('PRODUCT')}}>
                 <Button text='Home' ></Button>
