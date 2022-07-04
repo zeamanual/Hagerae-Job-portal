@@ -1,3 +1,5 @@
+The website is launched on netlify, the link for it is https://zeamanual-feleke-demo-product-display-site.netlify.app
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
