@@ -20,8 +20,8 @@ function Product({pId,img,title,price,rating,count}) {
     let clickHandler =()=>{
         navigate(`/product/${pId}`)
     }
-    if(title.length>40){
-        title=nameResizer(title,39)
+    if(title.length>35){
+        title=nameResizer(title,30)
     }
     
     cartContextData.cartData.products.forEach(product=>{
