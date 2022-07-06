@@ -4,6 +4,7 @@
 }
 
 .product-detail-container .img-container{
+    max-width: 45%;
     padding: 1em;
 }
 .product-detail-container img{
