@@ -73,6 +73,6 @@
 
 @media all and (max-width:559px) {
     .product-detail-container .img-container{
-        width: 100%
+        max-width: 100%
     }
 }
